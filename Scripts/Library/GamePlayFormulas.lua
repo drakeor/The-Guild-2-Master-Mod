@@ -111,7 +111,7 @@ function SimAttackWithRangeWeapon(SimAlias,DestAlias)
 			PlaySound3D(SimAlias,"Effects/combat_strike_fist/combat_strike_fist+4.wav",1)
 			Sleep(0.5)
 			PlaySound3D(DestAlias,"combat/pain/Hurt_s_01.wav",1)
-			ModifyHP(DestAlias,-50,true)
+			ModifyHP(DestAlias,-150,true)
 			
 			CarryObject(SimAlias,"",false)
 
