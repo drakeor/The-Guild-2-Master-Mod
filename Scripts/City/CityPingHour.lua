@@ -72,7 +72,8 @@ function Run()
 			local cost = 0
 			local repairTotal = 0
 			local repairedbuildings = 0
-	
+			local taxMultiplier = 11
+
 			-- taxes (income)
 			local WorkshopCount = CityGetBuildings("", GL_BUILDING_CLASS_WORKSHOP, -1, -1, -1, FILTER_HAS_DYNASTY, "Workshop")
 			for l=0,WorkshopCount-1 do
@@ -80,6 +81,7 @@ function Run()
 				WorkshopLvl = BuildingGetLevel(Alias)
 				if BuildingGetOwner(Alias, "Sim") then
 					Tax = Tax + ((Rand(100) + 100) * WorkshopLvl * (TaxValue/10))
+					Tax = Tax * taxMultiplier
 				end
 			end
 			SetProperty("", "Workshops", WorkshopCount)
