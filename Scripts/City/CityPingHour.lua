@@ -72,7 +72,7 @@ function Run()
 			local cost = 0
 			local repairTotal = 0
 			local repairedbuildings = 0
-			local taxMultiplier = 11
+			local taxMultiplier = 3
 
 			-- taxes (income)
 			local WorkshopCount = CityGetBuildings("", GL_BUILDING_CLASS_WORKSHOP, -1, -1, -1, FILTER_HAS_DYNASTY, "Workshop")
