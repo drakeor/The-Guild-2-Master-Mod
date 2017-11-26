@@ -41,9 +41,10 @@ function Init()
 		"@L_HPFZ_WS_RUMPF_+8")
 	
 	local setzen = ((cash / 100) * prSatz)
-	
+	local unbuffedCash = setzen / 2
+
 	if setzen > 0 then
-		if not SpendMoney("", setzen, "") then
+		if not SpendMoney("", unbuffedCash, "") then
 			MsgQuick("","@L_MEASURE_DICEGAME_NOMONEY_+0")
 			StopMeasure()
 		end
