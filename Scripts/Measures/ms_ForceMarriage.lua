@@ -30,25 +30,25 @@ function Run()
 	
 	-- idea of fixed prices
 	if LLevel == 1 and cost < 1500 then
-		cost = 1500
+		cost = 150
 	elseif LLevel == 2 and cost < 2750 then
-		cost = 2750
+		cost = 275
 	elseif LLevel == 3 and cost < 4000 then
-		cost = 4000
+		cost = 400
 	elseif LLevel == 4 and cost < 5250 then
-		cost = 5250
+		cost = 525
 	elseif LLevel == 5 and cost < 6800 then
-		cost = 6800
+		cost = 680
 	elseif LLevel == 6 and cost < 8500 then
-		cost = 8500
+		cost = 850
 	elseif LLevel == 7 and cost < 10000 then
-		cost = 10000
+		cost = 1000
 	elseif LLevel == 8 and cost < 12500 then
-		cost = 12500
+		cost = 1250
 	elseif LLevel == 9 and cost < 14250 then
-		cost = 14250
+		cost = 1425
 	elseif Llevel == 10 and cost < 16000 then
-		cost = 16000
+		cost = 1600
 	end
 	
 	
@@ -72,6 +72,7 @@ function Run()
 								
 		if (BYesNo == "A") then
 			SpendMoney("", cost, "CostForceMarriage")
+			IncrementXPQuiet("",3000)
 			SimMarry("", "Destination")
 		end
 	end
