@@ -21,7 +21,7 @@ function Run()
 	end
 
 	local Count = SimGetChildCount("")
-	local MaxChilds = 3
+	local MaxChilds = 5
 	
 	if Count > MaxChilds then
 		MsgQuick("", "@L_MEASURE_ADOPTORPHAN_FAILURE_+0", GetID(""), GetID("Spouse"), Count)
@@ -88,7 +88,7 @@ function Run()
 	Sleep(1)
 
 	local Title = GetNobilityTitle("")
-	local Cost = (Title * Title) * 150
+	local Cost = (Title * Title) * -350
 	local choice
 	
 	if not IsStateDriven() then
