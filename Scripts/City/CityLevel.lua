@@ -4,15 +4,15 @@ Include("Campaign/DefaultCampaign.lua")
 
 function GetValue(Level)
 	if Level==2 then
-		return {0, 80}
+		return {0, 40}
 	elseif Level==3 then
-		return {90, 130}
+		return {50, 60}
 	elseif Level==4 then
-		return {140, 200}
+		return {70, 90}
 	elseif Level==5 then
-		return {200, 300}
+		return {100, 120}
 	elseif Level==6 then
-		return {260, 99999}
+		return {130, 99999}
 	end
 end
 
