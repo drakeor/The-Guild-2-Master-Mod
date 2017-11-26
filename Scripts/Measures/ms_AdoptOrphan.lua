@@ -88,6 +88,7 @@ function Run()
 	Sleep(1)
 
 	local Title = GetNobilityTitle("")
+	chr_SimAddImperialFame("", 5)
 	local Cost = (Title * Title) * -350
 	local choice
 	
