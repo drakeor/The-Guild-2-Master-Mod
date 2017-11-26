@@ -15,7 +15,9 @@ function Run()
 			SetSkillValue("",CONSTITUTION,1)
 			SetSkillValue("",DEXTERITY,1)
 		
+			diseases_Fracture("",true,true)
 			diseases_BurnWound("",true,true)
+			
 			AIExecutePlan("", "CityGuard", "SIM", "", "dynasty", "ServantDynasty")
 			return
 		end
