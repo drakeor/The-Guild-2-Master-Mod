@@ -51,7 +51,7 @@ function Run()
 	chr_MultiAnim("", "kiss_male", "Destination", "kiss_female", InteractionDistance)
 
 	-- Kissing gives influenza
-	diseases_Influenza("Destination",true)
+	diseases_Influenza("Destination",true,true)
 
 	local WasCourtLover = 0	
 	chr_BlockSocialMeasures("")

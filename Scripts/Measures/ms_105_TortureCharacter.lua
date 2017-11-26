@@ -61,7 +61,7 @@ function Run()
 		SetData("MessageDone",1)
 		Time = PlayAnimationNoWait("", "propel")
 		local ActivityTime = MoveSetActivity("Destination","arrested")
-		
+
 		Sleep(Time)
 		
 		--move to jail
@@ -125,6 +125,7 @@ function Run()
 	SetData("PositionModified",1)
 	PositionModify("VictimPosition",0,70,0)
 	CarryObject("","weapons/club_01.nif",false)
+	diseases_Blackdeath("Destination",true,true)
 	for i=1,10 do
 		PlayAnimationNoWait("Destination","torture_victim")
 		PlayAnimation("","torture")

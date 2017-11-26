@@ -143,7 +143,7 @@ function Normal()
 				GetID(""),ReplacementLabel,GetID("Destination"))
 	
 	-- destination gets a fracture
-	diseases_Fracture("Destination",true)
+	diseases_Fracture("Destination",true,true)
 	
 	--destination wants satisfaction
 	SetMeasureRepeat(TimeOut)
