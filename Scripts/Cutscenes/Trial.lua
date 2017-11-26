@@ -251,9 +251,7 @@ function AiGetJudgeOffer()
 	if EvidenceValue > 7 then
 		return 0
 	end
-	
-	return 20
-	
+
 	local Value = EvidenceValue + (Rand(2) - 1)
 	if EvidenceStrength < 51 and Value > 1 then
 		Value = Value - 1
@@ -281,6 +279,9 @@ function AiGetJudgeOffer()
 		end
 	end
 	
+	-- Evidence buff
+	Value = Value + 2
+
 	if Value > 5 then
 		Value = 5
 	elseif Value < 0 then
@@ -1381,22 +1382,22 @@ function Go()
 		-- Urteilsverk�ndung--------------------------------------------
 
 --		MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_+0") -- Rausgenommen weil keine Speech aufnahme..
-		if confession==2 or conviction_cnt>=2 then
-			if confession==2 and conviction_cnt<2 then
+		if confession==2 or conviction_cnt>=1 then
+			if confession==2 and conviction_cnt<1 then
 				PlayAnimationNoWait("judge", "sit_talk")
 				MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_BUT_MILD"..GenderType)
 				PlayAnimationNoWait("judge", "sit_talk")
 				MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_BUT_MILD_TOBOTH_+0")
 				PlayAnimationNoWait("judge", "sit_talk")
 				MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_BUT_MILD_TOBOTH_+1")
-				SentenceLevel = SentenceLevel - 1
+				SentenceLevel = SentenceLevel
 			else
 				PlayAnimationNoWait("judge", "sit_talk")
 				MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY"..GenderType,GetID("accused"))
-				if conviction_cnt==2 then
+				if conviction_cnt>1 then
 					PlayAnimationNoWait("judge", "sit_talk")
 					MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_HALF")
-					SentenceLevel = SentenceLevel - 1;
+					SentenceLevel = SentenceLevel;
 				else
 					PlayAnimationNoWait("judge", "sit_talk")
 					MsgSay("judge","@L_LAWSUIT_6_DECISION_B_JUDGE_DECISION_GUILTY_FULL")
