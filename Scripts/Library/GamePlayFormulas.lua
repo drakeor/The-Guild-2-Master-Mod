@@ -204,7 +204,7 @@ function SimAttackWithRangeWeapon(SimAlias,DestAlias)
 			StartSingleShotParticle("particles/Explosion.nif","BuildingPos",Rand(2)+1,2)
 			PlaySound3D(DestAlias,"Effects/combat_bomb_explode/combat_bomb_explode+0.wav", 1.0)
 
-			local HP = GetHP(DestAlias) / 5
+			local HP = GetHP(DestAlias) / 3
 			ModifyHP(DestAlias,-HP,true)
 
 			CarryObject("","",false)
