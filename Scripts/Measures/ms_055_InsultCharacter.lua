@@ -98,7 +98,6 @@ function Normal()
 	CutsceneCameraCreate("cutscene","")		
 	camera_CutsceneBothLock("cutscene", "")	-- irgend ein befehl um die cutscene camera zu setzen
 	
-	
 	local CurrentRound = GetRound()
 	if not HasProperty("", "LastTimeInsulted") then
 		SetProperty("", "LastTimeInsulted", CurrentRound)
@@ -142,6 +141,9 @@ function Normal()
 				--"@L_DUELL_1_DIALOGMSG_INSULTEDONE_+0",
 				"@L_DUELL_1_DIALOGMSG_INSULTEDONE_+1",
 				GetID(""),ReplacementLabel,GetID("Destination"))
+	
+	-- destination gets a fracture
+	diseases_Fracture("Destination",true)
 	
 	--destination wants satisfaction
 	SetMeasureRepeat(TimeOut)

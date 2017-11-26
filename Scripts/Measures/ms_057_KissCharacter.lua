@@ -49,8 +49,10 @@ function Run()
 	camera_CutsceneBothLock("cutscene", "")
 	
 	chr_MultiAnim("", "kiss_male", "Destination", "kiss_female", InteractionDistance)
+
+	-- Kissing gives influenza
 	diseases_Influenza("Destination",true)
-	
+
 	local WasCourtLover = 0	
 	chr_BlockSocialMeasures("")
 	
