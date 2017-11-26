@@ -1484,7 +1484,7 @@ function Go()
 		Sleep(time - 7)
 		CarryObject("judge","",false)
 		Sleep(1)
-		PlayAnimationNoWait("judge", "talk_sit_short")
+		PlayAnimationNoWait("judge", "sit_judge_hammer")
 		MsgSay("judge","@L_LAWSUIT_6_DECISION_C_JUDGEMENT_CLOSE_+0")
 
 		--Reactions

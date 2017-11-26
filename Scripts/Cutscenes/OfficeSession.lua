@@ -355,15 +355,15 @@ function RunCouncilMeeting()
 		officesession_UpdatePanel()
 	end
 
-	-- Check ob überhaupt Applicants da sind. Ist niemand da, sollte die Sitzung gleich beendet werden.
+	-- Check ob ï¿½berhaupt Applicants da sind. Ist niemand da, sollte die Sitzung gleich beendet werden.
 	if(not (officesession_GetValidApplicantCount("settlement") > 0)) then
 		officesession_SimCam("Chairman",0,0)
-		PlayAnimationNoWait("Chairman", "sit_talk_short")
+		PlayAnimationNoWait("Chairman", "sit_judge_hammer")
 		MsgSay("Chairman","@L_SESSION_ADDON_NO_DECIDERS")
 		EndCutscene("")
 	end
 
-	-- schleife über alle votes, vom höchsten Amt bis zu niedrigsten Amt
+	-- schleife ï¿½ber alle votes, vom hï¿½chsten Amt bis zu niedrigsten Amt
 	local NumOfVotes = CityPrepareOfficesToVote("settlement","OfficeList",true)
 	SetData("VoteCnt",NumOfVotes)
 
@@ -374,7 +374,7 @@ function RunCouncilMeeting()
 
 	if(NumOfVotes == 0) then
 		officesession_SimCam("Chairman",0,0)
-		PlayAnimationNoWait("Chairman", "sit_talk_short")
+		PlayAnimationNoWait("Chairman", "sit_judge_hammer")
 		MsgSay("Chairman","@L_SESSION_ADDON_NO_DECIDERS") 
 		EndCutscene("")
 	end
@@ -396,10 +396,10 @@ function RunCouncilMeeting()
 
 
 	-- Verabschiedung durch den Chairman
-	PlayAnimationNoWait("Chairman", "sit_talk_short")	
+	PlayAnimationNoWait("Chairman", "sit_judge_hammer")	
 	MsgSay("Chairman","@L_SESSION_4_GOODBYE_SUCCESS")
 
-	-- Übertragen der Änderungen in den OfficeTree
+	-- ï¿½bertragen der ï¿½nderungen in den OfficeTree
 	officesession_WriteVotes()
 
 	 -- Alle Sims ausser die Stadtangestellten verlassen die TownHall
@@ -418,7 +418,7 @@ function VoteForOffice(Office)
 	-- if no applicant is there, no vote will be made.
 	if(ApplicantCnt == 0) then
 		officesession_SimCam("Chairman",0,0)
-		PlayAnimationNoWait("Chairman", "sit_talk_short")		
+		PlayAnimationNoWait("Chairman", "sit_judge_hammer")		
 		MsgSay("Chairman","@L_SESSION_ADDON_NO_DECIDERS")
 		return
 	end
@@ -427,7 +427,7 @@ function VoteForOffice(Office)
 	local OfficeName = "@L"..string.sub(OfficeNameLabel, 0, -2)..2
 
 	officesession_SimCam("Chairman",0,0)
-	PlayAnimationNoWait("Chairman", "sit_talk_short")
+	PlayAnimationNoWait("Chairman", "sit_judge_hammer")
 	MsgSay("Chairman","@L_SESSION_ADDON_INTRO")
 		if CutsceneLocalPlayerIsWatching("") then
 			HudClearSelection()
@@ -466,10 +466,10 @@ function VoteForOffice(Office)
 	end
 
 	SetData("HumanTask",0)
-	-- Aufzählung der Bewerber
+	-- Aufzï¿½hlung der Bewerber
 	SetData("PanelShow",1)
 	
-	PlayAnimationNoWait("Chairman", "sit_talk_short")
+	PlayAnimationNoWait("Chairman", "sit_judge_hammer")
 	if (ApplicantCnt > 1) then
 		MsgSay("Chairman","@L_SESSION_ADDON_CANDIDATES_MORE")
 	else
@@ -513,7 +513,7 @@ function VoteForOffice(Office)
 			officesession_UpdatePanel()
 		end
 	else
-    -- Aufzählung der Voters
+    -- Aufzï¿½hlung der Voters
     local VoterCnt = officesession_GetVoters("Office","Voter")
 	--PATCH TODO
 	-- prevents cutscene from freezing
@@ -732,7 +732,7 @@ function VoteForOffice(Office)
 		 	officesession_OverviewCam()
 	
 	
-			-- Auszählung der Stimmen
+			-- Auszï¿½hlung der Stimmen
 			local WinnerArray = {}
 			local WinnerArrayCount = 0
 			local MaxVote = 0
@@ -792,7 +792,7 @@ function VoteForOffice(Office)
 				else
 					Winner = WinnerArray[Rand(WinnerArrayCount)+1]
 				end
-				-- Losentscheid über diejenigen mit den meisten Stimmen
+				-- Losentscheid ï¿½ber diejenigen mit den meisten Stimmen
 				if( OfficeGetHolder("Office","OfficeHolder") and GetID("OfficeHolder") == GetID(CurrentWinner) ) then
 --					MsgSay("Chairman","@L_SESSION_2_CANCEL_ANOUNCEMENT_SPEECH_+1")
 				elseif( OfficeGetHolder("Office","OfficeHolder") and wonEllection == false ) then
@@ -1827,7 +1827,7 @@ end
 
 -- saves the result of the given vote
 function SaveVoteResult(OfficeAlias,WinnerAlias)
- -- sollte der Gewinner ebenfalls in der Amtswahl um sein altes Amt vertreten sein, wird er aus der Wahlliste für dieses Amt gelöscht
+ -- sollte der Gewinner ebenfalls in der Amtswahl um sein altes Amt vertreten sein, wird er aus der Wahlliste fï¿½r dieses Amt gelï¿½scht
 	if(SimGetOffice(WinnerAlias,"CurrentOffice") == true) then
 		OfficeRemoveApplicant("CurrentOffice",WinnerAlias)
 	end
