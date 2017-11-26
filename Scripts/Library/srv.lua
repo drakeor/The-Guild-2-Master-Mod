@@ -9,7 +9,7 @@ end
 -- GetUseBombDamage
 -- -----------------------
 function GetUseBombDamage(ServantAlias, TargetBuildingAlias)
-	damage = 50
+	damage = 150
 	return damage
 end
 
