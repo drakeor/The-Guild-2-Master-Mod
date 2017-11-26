@@ -21,7 +21,7 @@ function Run()
 	end
 
 	local Count = SimGetChildCount("")
-	local MaxChilds = 5
+	local MaxChilds = 50
 	
 	if Count > MaxChilds then
 		MsgQuick("", "@L_MEASURE_ADOPTORPHAN_FAILURE_+0", GetID(""), GetID("Spouse"), Count)

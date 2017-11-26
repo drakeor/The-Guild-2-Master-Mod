@@ -9,6 +9,7 @@ function CheckPosition()
 		MaxCount = 4
 	end
 	
+	--[[
 	if Have >= 4 then
 		return "@L_GENERAL_BUILDING_MAX_TOWER"
 	end
@@ -23,7 +24,7 @@ function CheckPosition()
 				return "@L_GENERAL_BUILDING_TONEAR_CITY"
 			end
 		end
-	end
+	end]]
 
 	local	Count = DynastyGetBuildingCount2("Dynasty")
 	local Type
@@ -32,7 +33,7 @@ function CheckPosition()
 		if DynastyGetBuilding2("Dynasty", l, "Check") then
 			Type = BuildingGetClass("Check")
 			if Type==GL_BUILDING_CLASS_WORKSHOP or Type==GL_BUILDING_CLASS_LIVINGROOM then
-				if GetDistance("Check", "Position")<2000 then
+				if GetDistance("Check", "Position")<200 then
 					return nil
 				end
 			end
