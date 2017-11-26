@@ -8,9 +8,9 @@ function Weight()
 	end
 	
 	local time = math.mod(GetGametime(),24)
-	if time > 20 or time < 6 then
+	--[[if time > 20 or time < 6 then
 		return 0
-	end
+	end]]
 
 --	local Count = SimGetChildCount("SIM")
 --	local MaxChilds = 3
