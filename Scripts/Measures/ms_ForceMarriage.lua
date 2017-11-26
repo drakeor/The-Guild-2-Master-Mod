@@ -29,25 +29,25 @@ function Run()
 	local LLevel = SimGetLevel("Destination")
 	
 	-- idea of fixed prices
-	if LLevel == 1 and cost < 1500 then
+	if LLevel == 1 and cost < 150 then
 		cost = 150
-	elseif LLevel == 2 and cost < 2750 then
+	elseif LLevel == 2 and cost < 275 then
 		cost = 275
-	elseif LLevel == 3 and cost < 4000 then
+	elseif LLevel == 3 and cost < 400 then
 		cost = 400
-	elseif LLevel == 4 and cost < 5250 then
+	elseif LLevel == 4 and cost < 525 then
 		cost = 525
-	elseif LLevel == 5 and cost < 6800 then
+	elseif LLevel == 5 and cost < 680 then
 		cost = 680
-	elseif LLevel == 6 and cost < 8500 then
+	elseif LLevel == 6 and cost < 850 then
 		cost = 850
-	elseif LLevel == 7 and cost < 10000 then
+	elseif LLevel == 7 and cost < 1000 then
 		cost = 1000
-	elseif LLevel == 8 and cost < 12500 then
+	elseif LLevel == 8 and cost < 1250 then
 		cost = 1250
-	elseif LLevel == 9 and cost < 14250 then
+	elseif LLevel == 9 and cost < 1425 then
 		cost = 1425
-	elseif Llevel == 10 and cost < 16000 then
+	elseif Llevel == 10 and cost < 1600 then
 		cost = 1600
 	end
 	
