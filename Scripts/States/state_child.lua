@@ -12,7 +12,7 @@
 function Init()
 	SetStateImpact("no_hire")
 	SetStateImpact("no_control")
-	SetStateImpact("no_attackable")
+	--SetStateImpact("no_attackable")
 	StopMeasure()
 end
 
